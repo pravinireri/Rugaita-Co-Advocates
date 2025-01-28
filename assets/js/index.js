@@ -15,3 +15,30 @@ navLinks.forEach(link => {
         targetSection.classList.add('active');
     });
 });
+
+const icons = document.querySelectorAll('.nav-icon');
+
+const navIcons = Array.from(icons).slice(0, -1); 
+let lastIndex = -1;
+
+function updateActiveIcon() {
+  let index = sections.length - 1;
+
+  while (index >= 0 && window.scrollY + window.innerHeight / 2 < sections[index].offsetTop) {
+    index--;
+  }
+
+  if (index !== lastIndex) {
+    navIcons[lastIndex]?.classList.remove('active');
+    navIcons[index]?.classList.add('active');
+    lastIndex = index;
+  }
+}
+
+window.addEventListener('scroll', () => {
+  requestAnimationFrame(() => {
+    updateActiveIcon();
+  });
+});
+
+updateActiveIcon();
