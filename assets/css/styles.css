@@ -123,7 +123,7 @@ nav {
     text-align: left;
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background: url('/assets/images/embu-photo.jpg') no-repeat center center/cover;
+    background: url('../images/embu-photo.jpg') no-repeat center center/cover;
     color: var(--text-color);
     min-height: 100vh;
     position: relative;
