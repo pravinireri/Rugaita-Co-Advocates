@@ -296,57 +296,86 @@ ul li::before {
 /* Section 2: Services */
 
 .services-container {
-    width: 90%;
-    max-width: 1200px;
+    width: 100%;
     margin: 2rem auto;
+    padding: 7rem 0 0;
+    background-color: #121212;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);  
+    position: relative;
+    z-index: 1;
+    }
+
+.services-container::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    z-index: -1;
+}
+
+.services-container::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    z-index: -1;
 }
 
 .services-header {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
 }
 
 .services-header h1 {
     font-size: 2.5rem;
-    color: #333;
+    color: var(--primary-color);
+    font-weight: bold;
     margin-bottom: 0.5rem;
 }
 
 .services-header p {
-    font-size: 1rem;
-    color: #666;
+    font-size: 1.1rem;
+    color: var(--secondary-text);
+    line-height: 1.6;
+    margin-bottom: 2rem;
 }
 
 .services-nav {
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 2rem;
     margin-bottom: 3rem;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
 }
 
 .services-nav a {
     text-decoration: none;
-    color: #0077cc;
-    font-weight: 600;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
 }
 
-.services-nav a:hover {
-    color: #005999;
+.services-nav a:hover,
+.services-nav a.active {
+    color: #ffcc00;
     text-decoration: underline;
-    background-color: transparent;
 }
 
 .section {
     display: none;
+    margin-top: 60px;
 }
 
 .section.active {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center; /* Centers the content and image */
     margin-bottom: 3rem;
-    border-bottom: 1px solid #ddd;
     padding-bottom: 2rem;
 }
 
@@ -354,28 +383,42 @@ ul li::before {
     border-bottom: none;
 }
 
-.section img {
-    flex: 1;
-    max-width: 300px;
-    height: 350px;
-    border-radius: 10px;
-    margin-right: 2rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+/* Wrapper to center the content and image */
+.section-wrapper {
+    width: 90%;
+    max-width: 1200px; /* Limit width */
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
+/* Image styling */
+.section img {
+    max-width: 320px;
+    height: 400px;
+    border-radius: 10px;
+    margin-right: 2rem;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Content styling */
 .section-content {
     flex: 2;
+    max-width: 600px; /* Prevent text from stretching too wide */
 }
 
 .section-content h2 {
     font-size: 2rem;
-    color: #4a4a4a;
+    color: var(--primary-color);
     margin-bottom: 1rem;
+    font-weight: bold;
 }
 
 .section-content p {
     line-height: 1.6;
     margin-bottom: 1.5rem;
+    color: var(--secondary-text);
 }
 
 .section-content ul {
@@ -385,49 +428,39 @@ ul li::before {
 
 .section-content ul li {
     margin-bottom: 0.5rem;
+    color: #bbb;
 }
 
 .section-content ul li a {
     text-decoration: none;
-    color: #0077cc;
+    color: var(--primary-color);
     font-weight: 500;
+    transition: color 0.3s ease;
 }
 
 .section-content ul li a:hover {
-    text-decoration: underline;
-}
-
-.footer-link {
-    text-align: right;
-    margin-top: 1rem;
-}
-
-.footer-link a {
-    color: #0077cc;
-    font-weight: 500;
-    text-decoration: none;
-}
-
-.footer-link a:hover {
+    color: #ffcc00;
     text-decoration: underline;
 }
 
 /* Active Button Style */
 .services-nav a.active {
-    color: #005999;
-    font-weight: 700;
+    color: #ffcc00;
+    font-weight: bold;
     text-decoration: underline;
     background-color: transparent;
 }
+
 
 /* Section 3: Attorneys */
 
 .a-container {
     max-width: 1100px;
-    margin: auto;
     text-align: center;
     font-family: 'Poppins', sans-serif;
     margin: 0 auto;
+    margin-top: 150px;
+    margin-bottom: -120px;
     padding: 0;
     color: #333;
 }
@@ -488,6 +521,8 @@ ul li::before {
     width: 80%;
     margin: 0 auto;
     margin-bottom: 50px;
+    border-radius: 15px;
+    overflow: hidden;
 }
 
 .left {
@@ -569,6 +604,7 @@ iframe {
     color: #ffcc00;
     padding-left: 20px;
 }
+
 
 /* Footer styles */
 
