@@ -1,8 +1,7 @@
-// Highlight navbar links based on scroll position
+// Navbar Highlight
 const navLinks = document.querySelectorAll('.nav-link');
 const sections = document.querySelectorAll('section');
 
-// Function to check which section is in view
 function highlightNavLink() {
     let currentSection = '';
 
@@ -11,54 +10,44 @@ function highlightNavLink() {
         const sectionHeight = section.clientHeight;
         const sectionBottom = sectionTop + sectionHeight;
 
-        // Check if the section is in view (with a threshold)
         if (
-            window.scrollY + window.innerHeight * 0.4 >= sectionTop && // Check if 40% of the viewport is within the section
+            window.scrollY + window.innerHeight * 0.4 >= sectionTop &&
             window.scrollY + window.innerHeight * 0.4 <= sectionBottom
         ) {
             currentSection = section.getAttribute('id');
         }
     });
 
-    // Remove active class from all nav links
     navLinks.forEach(link => {
         link.classList.remove('active');
     });
 
-    // Add active class to the corresponding nav link
     if (currentSection) {
         document.querySelector(`.nav-link[href="#${currentSection}"]`).classList.add('active');
     }
 }
 
-// Event listener for scroll
 window.addEventListener('scroll', highlightNavLink);
 
-// Event listener for click on nav links
 navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
         e.preventDefault();
 
-        // Remove active class from all nav links
         navLinks.forEach(navLink => navLink.classList.remove('active'));
 
-        // Add active class to the clicked link
         link.classList.add('active');
 
-        // Scroll to the corresponding section with an adjusted offset
         const targetSection = document.querySelector(link.getAttribute('href'));
         if (targetSection) {
             const targetOffset = targetSection.offsetTop;
-            const navbarHeight = document.querySelector('nav').clientHeight; // Height of the navbar
+            const navbarHeight = document.querySelector('nav').clientHeight; 
             const windowHeight = window.innerHeight;
 
-            // Adjust scroll position for specific sections (e.g., Team and Contact)
             let scrollAdjustment = 0;
             if (targetSection.id === 'section4' || targetSection.id === 'section5') {
-                scrollAdjustment = -100; // Scroll a bit higher for Team and Contact sections
+                scrollAdjustment = -100;
             }
 
-            // Calculate the scroll position to center the section
             const scrollPosition = targetOffset - navbarHeight + scrollAdjustment;
 
             window.scrollTo({
@@ -69,10 +58,8 @@ navLinks.forEach(link => {
     });
 });
 
-// Highlight the first section by default on page load
 highlightNavLink();
 
-// Existing code for services-nav and icons
 const servicesNavLinks = document.querySelectorAll('.services-nav a');
 const serviceSections = document.querySelectorAll('.section');
 
@@ -80,11 +67,9 @@ servicesNavLinks.forEach(link => {
     link.addEventListener('click', (e) => {
         e.preventDefault();
 
-        // Remove active class from all services-nav links and sections
         servicesNavLinks.forEach(navLink => navLink.classList.remove('active'));
         serviceSections.forEach(section => section.classList.remove('active'));
 
-        // Add active class to the clicked link and corresponding section
         link.classList.add('active');
         const targetSection = document.querySelector(link.getAttribute('href'));
         targetSection.classList.add('active');
@@ -116,3 +101,66 @@ window.addEventListener('scroll', () => {
 });
 
 updateActiveIcon();
+
+// Smooth Scroll for Navbar Links
+
+document.querySelectorAll('nav ul li a').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetSection = document.querySelector(targetId); 
+        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+});
+
+// Sticky Navbar with Shadow
+const navbar = document.querySelector('nav');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        navbar.classList.add('sticky');
+    } else {
+        navbar.classList.remove('sticky');
+    }
+});
+
+// Lazy Load Images
+const images = document.querySelectorAll('img[data-src]');
+
+const lazyLoad = (img) => {
+    img.setAttribute('src', img.getAttribute('data-src'));
+    img.onload = () => {
+        img.removeAttribute('data-src');
+    };
+};
+
+const imageObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            lazyLoad(entry.target);
+            imageObserver.unobserve(entry.target);
+        }
+    });
+}, { rootMargin: '0px 0px 200px 0px' });
+
+images.forEach(img => imageObserver.observe(img));
+
+
+// Dynamic Year in Footer
+const year = new Date().getFullYear();
+document.querySelector('.footer-text').innerHTML = `© ${year} Rugaita & Co Advocates`;
+
+// Back to Top Button
+const backToTopButton = document.getElementById('backToTop');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        backToTopButton.style.display = 'block';
+    } else {
+        backToTopButton.style.display = 'none';
+    }
+});
+
+backToTopButton.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
