@@ -124,28 +124,6 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Lazy Load Images
-const images = document.querySelectorAll('img[data-src]');
-
-const lazyLoad = (img) => {
-    img.setAttribute('src', img.getAttribute('data-src'));
-    img.onload = () => {
-        img.removeAttribute('data-src');
-    };
-};
-
-const imageObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            lazyLoad(entry.target);
-            imageObserver.unobserve(entry.target);
-        }
-    });
-}, { rootMargin: '0px 0px 200px 0px' });
-
-images.forEach(img => imageObserver.observe(img));
-
-
 // Dynamic Year in Footer
 const year = new Date().getFullYear();
 document.querySelector('.footer-text').innerHTML = `© ${year} Rugaita & Co Advocates`;
