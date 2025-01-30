@@ -8,10 +8,6 @@ This is the ongoing development of the **Rugaita & Co. Advocates** website. The 
 2. [Features](#features)
 3. [Technologies Used](#technologies-used)
 4. [Folder Structure](#folder-structure)
-5. [Installation](#installation)
-6. [Customization](#customization)
-7. [Contributing](#contributing)
-8. [License](#license)
 
 ---
 
