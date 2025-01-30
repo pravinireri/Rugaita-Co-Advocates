@@ -31,7 +31,7 @@ a {
 
 /* NAVBAR */
 nav {
-    background-color: #272727; /* Matches your site's dark background */
+    background-color: #272727;
     height: 80px;
     padding: 0 5%;
     display: flex;
@@ -41,11 +41,11 @@ nav {
     top: 0;
     z-index: 1000;
     width: 100%;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Slightly darker shadow for depth */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .logo {
-    color: var(--text-color); /* Uses your off-white text color */
+    color: var(--text-color);
     font-size: 28px;
     font-weight: 600;
     letter-spacing: 1px;
@@ -64,7 +64,7 @@ nav {
 }
 
 .nav-link {
-    color: var(--text-color); /* Uses your off-white text color */
+    color: var(--text-color);
     font-size: 16px;
     font-weight: 500;
     text-decoration: none;
@@ -81,7 +81,7 @@ nav {
     left: 50%;
     width: 0;
     height: 2px;
-    background-color: var(--primary-color); /* Yellow underline for hover effect */
+    background-color: var(--primary-color);
     transition: all 0.3s ease;
     transform: translateX(-50%);
 }
@@ -91,18 +91,18 @@ nav {
 }
 
 .nav-link:hover {
-    color: var(--primary-color); /* Yellow text on hover */
+    color: var(--primary-color);
 }
 
 /* Active link styling */
 .nav-link.active {
     color: var(--primary-color);
+    font-weight: bold;
 }
 
 .nav-link.active::before {
     width: 100%;
 }
-
   /* Hero Section */
 
   .hero-section {
@@ -369,7 +369,7 @@ ul li::before {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center; /* Centers the content and image */
+    justify-content: center;
     margin-bottom: 3rem;
     padding-bottom: 2rem;
 }
@@ -378,10 +378,9 @@ ul li::before {
     border-bottom: none;
 }
 
-/* Wrapper to center the content and image */
 .section-wrapper {
     width: 90%;
-    max-width: 1200px; /* Limit width */
+    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -400,7 +399,7 @@ ul li::before {
 /* Content styling */
 .section-content {
     flex: 2;
-    max-width: 600px; /* Prevent text from stretching too wide */
+    max-width: 600px;
 }
 
 .section-content h2 {
@@ -516,6 +515,7 @@ ul li::before {
     width: 80%;
     margin: 0 auto;
     margin-bottom: 50px;
+    margin-top: 250px;
     border-radius: 15px;
     overflow: hidden;
 }
