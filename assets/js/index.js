@@ -142,3 +142,23 @@ window.addEventListener('scroll', () => {
 backToTopButton.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+
+// JavaScript for Footer Animation
+
+document.addEventListener("DOMContentLoaded", function () {
+    const creditsText = document.querySelector(".credits-text");
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    creditsText.style.opacity = "1";
+                    creditsText.style.transform = "translateY(0)";
+                }
+            });
+        },
+        { threshold: 0.5 } // Trigger when 50% of the footer is visible
+    );
+
+    observer.observe(document.querySelector(".footer-credits"));
+});
