@@ -29,6 +29,7 @@ function highlightNavLink() {
 
 window.addEventListener('scroll', highlightNavLink);
 
+// Smooth Scroll for Navbar Links with Offset
 navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
         e.preventDefault();
@@ -39,16 +40,20 @@ navLinks.forEach(link => {
 
         const targetSection = document.querySelector(link.getAttribute('href'));
         if (targetSection) {
+            const navbarHeight = document.querySelector('nav').clientHeight; // Navbar height
             const targetOffset = targetSection.offsetTop;
-            const navbarHeight = document.querySelector('nav').clientHeight; 
-            const windowHeight = window.innerHeight;
+            let scrollAdjustment = navbarHeight;
 
-            let scrollAdjustment = 0;
-            if (targetSection.id === 'section4' || targetSection.id === 'section5') {
-                scrollAdjustment = -100;
+            // Adjust offset for specific sections
+            if (targetSection.id === 'section2') { // About section
+                scrollAdjustment = navbarHeight + 80; // Slightly lower for About
+            } else if (targetSection.id === 'section3') { // Services section
+                scrollAdjustment = navbarHeight - 60; // Slightly lower for Services
+            } else if (targetSection.id === 'section5') { // Contact section
+                scrollAdjustment = navbarHeight + 20; // Slightly lower for Contact
             }
 
-            const scrollPosition = targetOffset - navbarHeight + scrollAdjustment;
+            const scrollPosition = targetOffset - scrollAdjustment;
 
             window.scrollTo({
                 top: scrollPosition,
@@ -60,6 +65,7 @@ navLinks.forEach(link => {
 
 highlightNavLink();
 
+// Services Section Navigation
 const servicesNavLinks = document.querySelectorAll('.services-nav a');
 const serviceSections = document.querySelectorAll('.section');
 
@@ -76,6 +82,7 @@ servicesNavLinks.forEach(link => {
     });
 });
 
+// Active Icon for Services Section
 const icons = document.querySelectorAll('.nav-icon');
 const navIcons = Array.from(icons).slice(0, -1);
 let lastIndex = -1;
@@ -101,17 +108,6 @@ window.addEventListener('scroll', () => {
 });
 
 updateActiveIcon();
-
-// Smooth Scroll for Navbar Links
-
-document.querySelectorAll('nav ul li a').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetSection = document.querySelector(targetId); 
-        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
-});
 
 // Sticky Navbar with Shadow
 const navbar = document.querySelector('nav');
@@ -143,8 +139,7 @@ backToTopButton.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-// JavaScript for Footer Animation
-
+// Footer Animation
 document.addEventListener("DOMContentLoaded", function () {
     const creditsText = document.querySelector(".credits-text");
 
