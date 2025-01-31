@@ -57,7 +57,7 @@ Currently, the site is in the early stages of development.
 │   ├── css/
 │   │   └── styles.css            # Main stylesheet for the website
 │   ├── images/
-│   │   └── embu-photo.jpg        # Hero background image (to be updated)
+│   │   └──                       # All Images contained in the project
 │   └── js/
 │       └── index.js              # JavaScript functionality (if applicable)
 │
