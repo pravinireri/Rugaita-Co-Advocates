@@ -760,6 +760,29 @@ iframe {
     background-color: #e6b800;
 }
 
+/* Mobile Devices (up to 425px) */
+@media (max-width: 425px) {
+    /* Navbar */
+    .logo {
+        font-size: 20px;
+    }
+
+    /* Footer */
+    .social-link {
+        margin: 0 auto;
+    }
+
+    .footer-link {
+        margin: 0 auto;
+    }
+
+    .footer-text {
+        margin: 0 auto;
+        text-align: center;
+    }
+}
+
+
 /* Mobile Devices (up to 767px) */
 @media (max-width: 767px) {
     /* Navbar */
