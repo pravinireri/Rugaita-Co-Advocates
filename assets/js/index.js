@@ -1,159 +1,140 @@
-// Navbar Highlight
-const navLinks = document.querySelectorAll('.nav-link');
-const sections = document.querySelectorAll('section');
 
-function highlightNavLink() {
-    let currentSection = '';
-
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        const sectionBottom = sectionTop + sectionHeight;
-
-        if (
-            window.scrollY + window.innerHeight * 0.4 >= sectionTop &&
-            window.scrollY + window.innerHeight * 0.4 <= sectionBottom
-        ) {
-            currentSection = section.getAttribute('id');
+document.addEventListener('DOMContentLoaded', function() {
+    // Variables
+    const navbar = document.querySelector('.navbar');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section');
+    const hamburger = document.querySelector('.hamburger');
+    const navLinksContainer = document.querySelector('.nav-links');
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+    const backToTopBtn = document.getElementById('backToTop');
+    const animatedElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right');
+    
+    // Update current year in footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+    
+    // Navbar scroll behavior
+    function handleScroll() {
+        // Add scrolled class to navbar
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+            backToTopBtn.classList.add('visible');
+        } else {
+            navbar.classList.remove('scrolled');
+            backToTopBtn.classList.remove('visible');
         }
-    });
-
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-    });
-
-    if (currentSection) {
-        document.querySelector(`.nav-link[href="#${currentSection}"]`).classList.add('active');
-    }
-}
-
-window.addEventListener('scroll', highlightNavLink);
-
-// Smooth Scroll for Navbar Links with Offset
-navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-
-        navLinks.forEach(navLink => navLink.classList.remove('active'));
-
-        link.classList.add('active');
-
-        const targetSection = document.querySelector(link.getAttribute('href'));
-        if (targetSection) {
-            const navbarHeight = document.querySelector('nav').clientHeight; // Navbar height
-            const targetOffset = targetSection.offsetTop;
-            let scrollAdjustment = navbarHeight;
-
-            // Adjust offset for specific sections
-            if (targetSection.id === 'section2') { // About section
-                scrollAdjustment = navbarHeight + 80; // Slightly lower for About
-            } else if (targetSection.id === 'section3') { // Services section
-                scrollAdjustment = navbarHeight - 60; // Slightly lower for Services
-            } else if (targetSection.id === 'section5') { // Contact section
-                scrollAdjustment = navbarHeight + 20; // Slightly lower for Contact
+        
+        // Highlight active nav link
+        let currentSection = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            const sectionHeight = section.clientHeight;
+            
+            if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                currentSection = section.getAttribute('id');
             }
-
-            const scrollPosition = targetOffset - scrollAdjustment;
-
-            window.scrollTo({
-                top: scrollPosition,
-                behavior: 'smooth',
-            });
-        }
+        });
+        
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${currentSection}`) {
+                link.classList.add('active');
+            }
+        });
+        
+        // Check for elements to animate on scroll
+        animatedElements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+            
+            if (elementTop < windowHeight * 0.8) {
+                element.classList.add('active');
+            }
+        });
+    }
+    
+    window.addEventListener('scroll', handleScroll);
+    
+    // Initial call to set correct state
+    handleScroll();
+    
+    // Mobile menu toggle
+    hamburger.addEventListener('click', function() {
+        this.classList.toggle('active');
+        navLinksContainer.classList.toggle('active');
     });
-});
-
-highlightNavLink();
-
-// Services Section Navigation
-const servicesNavLinks = document.querySelectorAll('.services-nav a');
-const serviceSections = document.querySelectorAll('.section');
-
-servicesNavLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-
-        servicesNavLinks.forEach(navLink => navLink.classList.remove('active'));
-        serviceSections.forEach(section => section.classList.remove('active'));
-
-        link.classList.add('active');
-        const targetSection = document.querySelector(link.getAttribute('href'));
-        targetSection.classList.add('active');
+    
+    // Close mobile menu when clicking a link
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navLinksContainer.classList.remove('active');
+        });
     });
-});
-
-// Active Icon for Services Section
-const icons = document.querySelectorAll('.nav-icon');
-const navIcons = Array.from(icons).slice(0, -1);
-let lastIndex = -1;
-
-function updateActiveIcon() {
-    let index = serviceSections.length - 1;
-
-    while (index >= 0 && window.scrollY + window.innerHeight / 2 < serviceSections[index].offsetTop) {
-        index--;
-    }
-
-    if (index !== lastIndex) {
-        navIcons[lastIndex]?.classList.remove('active');
-        navIcons[index]?.classList.add('active');
-        lastIndex = index;
-    }
-}
-
-window.addEventListener('scroll', () => {
-    requestAnimationFrame(() => {
-        updateActiveIcon();
+    
+    // Smooth scroll for nav links
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            if (targetSection) {
+                const headerOffset = 80;
+                const elementPosition = targetSection.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
     });
-});
-
-updateActiveIcon();
-
-// Sticky Navbar with Shadow
-const navbar = document.querySelector('nav');
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.classList.add('sticky');
-    } else {
-        navbar.classList.remove('sticky');
+    
+    // Services tabs
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const tabId = btn.dataset.tab;
+            
+            // Remove active class from all buttons and contents
+            tabBtns.forEach(btn => btn.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+            
+            // Add active class to clicked button and corresponding content
+            btn.classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+        });
+    });
+    
+    // Back to top button
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+    
+    // Scroll down button in hero section
+    const scrollDownBtn = document.querySelector('.scroll-down');
+    if (scrollDownBtn) {
+        scrollDownBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const aboutSection = document.getElementById('about');
+            
+            if (aboutSection) {
+                const headerOffset = 80;
+                const elementPosition = aboutSection.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
     }
-});
-
-// Dynamic Year in Footer
-const year = new Date().getFullYear();
-document.querySelector('.footer-text').innerHTML = `© ${year} Rugaita & Co Advocates`;
-
-// Back to Top Button
-const backToTopButton = document.getElementById('backToTop');
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-        backToTopButton.style.display = 'block';
-    } else {
-        backToTopButton.style.display = 'none';
-    }
-});
-
-backToTopButton.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
-// Footer Animation
-document.addEventListener("DOMContentLoaded", function () {
-    const creditsText = document.querySelector(".credits-text");
-
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    creditsText.style.opacity = "1";
-                    creditsText.style.transform = "translateY(0)";
-                }
-            });
-        },
-        { threshold: 0.5 } // Trigger when 50% of the footer is visible
-    );
-
-    observer.observe(document.querySelector(".footer-credits"));
 });

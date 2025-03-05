@@ -1,229 +1,347 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rugaita & Co Advocates</title>
-    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- NAVBAR -->
-    <nav>
-        <div class="logo">Rugaita & Co Advocates</div>
-        <ul class="nav-links">
-            <l><a href="#section1" class="nav-link">Home</a></li>
-            <l><a href="#section2" class="nav-link">About</a></li>
-            <l><a href="#section3" class="nav-link">Services</a></li>
-            <l><a href="#section4" class="nav-link">Team</a></li>
-            <l><a href="#section5" class="nav-link">Contact</a></li>
-        </ul>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Rugaita & Co</div>
+            <div class="nav-links-container">
+                <ul class="nav-links">
+                    <li><a href="#hero" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#team" class="nav-link">Team</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="nav-mobile">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </nav>
 
     <main>
         <!-- Hero Section -->
-        <section class="hero-section" id="section1">
-            <div class="container">
-                <div class="content">
-                    <h1>Protecting <span>Your Legal Interests</span> in Kenya</h1>
-                    <p>Whether you're a business owner seeking legal advice, a family 
-                        member looking to protect your loved ones' assets, or an 
-                        individual facing a legal dispute, our team of experienced 
-                        attorneys is here to help. Rugaita & Co Advocates specializes in
-                         the following practice areas:</p>
-
-                    <a href="#" class="btn">Free Consultation</a>
-                </div>
-                <div class="stats">
-                    <div class="stat"><span>30+</span> YEARS OF COMBINED EXPERIENCE</div>
-                    <div class="stat"><span>500+</span> CLIENTS SERVED</div>
-                    <div class="stat"><span>Millions</span> SAVED FOR OUR CLIENTS</div>
-                </div>
-            </div>
-        </section>
-
-
-        
-
-        <!-- Section 1: Info -->
-        <section class="info-container" id="section2">
-            <div class="image-section">
-                <img src="assets/images/firm.jpg" alt="Bouhan Falligant Building">
-                <div class="caption">RUGAITA & CO ADVOCATES - EMBU</div>
-            </div>
-            <div class="text-section">
-                <h1>RUGAITA & CO ADVOCATES</h1>
-                <div class="line"></div>
-                <p>
-                    A Full-Service Kenyan Law Firm with experienced attorneys who can handle a broad range of
-                    complex legal issues for businesses, governmental entities, organizations, professionals,
-                    and individuals, at the local, regional, and national levels. Through more than 130 years
-                    of practicing law, the firm has developed the deep knowledge base and sound judgment that
-                    delivers value to our clients. Rugaita & Co Advocates attracts exceptional attorneys who are
-                    diligent, determined, and care about the success of its clients.
-                </p>
-            </div>
-        </section>
-
-        <!-- Section 2: Services -->
-        <section class="services-container" id="section3"> 
-
-            <div class="services-header">
-                <h1>Legal Services We Provide</h1>
-                <p>Explore our expert legal services designed to meet your unique needs.</p>
-            </div>
-    
-            <div class="services-nav">
-                <a href="#estate-probate" class="active">Estate & Probate Law</a>
-                <a href="#civil-litigation">Civil Litigation</a>
-                <a href="#business-law">Business Law</a>
-                <a href="#real-estate-law">Real Estate Law</a>
-            </div>
-    
-            <!-- Estate & Probate Law Section -->
-            <div class="section active" id="estate-probate">
-                <img src="assets/images/service1.jpg" alt="Estate and Probate Law">
-                <div class="section-content">
-                    <h2>Estate & Probate Law</h2>
-                    <p>At Rugaita Co & Advocates, we understand that your legacy is important to you. That's why we offer comprehensive estate and probate law services to ensure that your assets and loved ones are protected.</p>
-                    <p>Our experienced attorneys will guide you through every step of the estate planning process, from drafting wills and trusts to establishing powers of attorney and healthcare directives.</p>
-                    <ul>
-                        <li><a href="#">Estate Planning</a></li>
-                        <li><a href="#">Probate & Estate Administration</a></li>
-                        <li><a href="#">Trust Administration</a></li>
-                    </ul>
-                </div>
-            </div>
-    
-            <!-- Civil Litigation Section -->
-            <div class="section" id="civil-litigation">
-                <img src="assets/images/service2.png" alt="Civil Litigation">
-                <div class="section-content">
-                    <h2>Civil Litigation</h2>
-                    <p>When legal disputes arise, it's important to have an experienced civil litigation team on your side. At Rugaita Co & Advocates, we are committed to protecting your rights and interests in a variety of civil litigation matters.</p>
-                    <ul>
-                        <li><a href="#">Bad Faith</a></li>
-                        <li><a href="#">Professional Negligence</a></li>
-                        <li><a href="#">Liquor Liability</a></li>
-                        <li><a href="#">Product Liability</a></li>
-                        <li><a href="#">Insurance Defense</a></li>
-                    </ul>
-                </div>
-            </div>
-    
-            <!-- Business Law Section -->
-            <div class="section" id="business-law" >
-                <img src="assets/images/service3.jpg" alt="Business Law">
-                <div class="section-content">
-                    <h2>Business Law</h2>
-                    <p>Our team provides strategic business law services to help your company succeed. We handle entity formation, contract negotiations, mergers, acquisitions, and much more.</p>
-                    <ul>
-                        <li><a href="#">Entity Formation</a></li>
-                        <li><a href="#">Contract Negotiations</a></li>
-                        <li><a href="#">Mergers & Acquisitions</a></li>
-                        <li><a href="#">Business Litigation</a></li>
-                    </ul>
-                </div>
-            </div>
-    
-            <!-- Real Estate Law Section -->
-            <div class="section" id="real-estate-law">
-                <img src="assets/images/service4.jpg" alt="Real Estate Law">
-                <div class="section-content">
-                    <h2>Real Estate Law</h2>
-                    <p>We offer comprehensive real estate law services, including property transactions, zoning, land use, and dispute resolution. Let our team assist with your real estate needs.</p>
-                    <ul>
-                        <li><a href="#">Property Transactions</a></li>
-                        <li><a href="#">Zoning & Land Use</a></li>
-                        <li><a href="#">Real Estate Disputes</a></li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Section 3: Attorneys -->
-
-            <section class="a-container" id="section4">
-                <div class="header">Expertise In Action:</div>
-                <div class="title">Meet The Team, Rugaita & Co Advocates</div>
-                <p class="description">
-                    At Rugaita & Co Advocates, our skilled attorneys are dedicated to delivering exceptional legal services, utilizing the latest technology to offer efficient and cost-effective solutions tailored to your unique needs.
-                </p>
-                <p class="description">
-                    Our proven track record of success, no-nonsense approach, and focus on achieving results ensure the best possible outcome. With a strong network of professional relationships, we are well-equipped to serve you. Communication and transparency are paramount, keeping you informed and engaged throughout the legal process.
-                </p>
-                <div class="team">
-                    <div class="team-member">
-                        <img src="assets/images/lawyer1.jpeg" alt="Wairimu Rugaita" style="height: 200px;">
-                        <div class="name">Wairimu Rugaita</div>
-                    </div>
-                    <div class="team-member">
-                        <img src="assets/images/lawyer2.jpg" alt="Wairimu Rugaita" style="height: 200px;">
-                        <div class="name">Wairimu Rugaita</div>
-                    </div>
-                </div>
-            </section>
-
-
-            <!-- Section 4: Contact -->
-
-            <section class="contact-container" id="section5">
-                <div class="left">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.678998014507!2d37.45222!3d-0.537393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x18262de2025c2a8d%3A0xce050e3f04890c66!2sRugaita%20%26%20Co%20Advocates!5e0!3m2!1sen!2sus!4v1700000000000" allowfullscreen></iframe>
-                </div>
-                <div class="right">
-                    <div class="content">
-                        <div class="header-container">
-                            <div class="header-line"></div>
-                            <h1>WE LOOK FORWARD TO WORKING WITH YOU</h1>
+        <section class="hero" id="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h5 class="subtitle">Legal Excellence in Kenya</h5>
+                    <h1 class="title">Protecting <span>Your Legal Interests</span> with Integrity</h1>
+                    <p class="description">
+                        Whether you're a business owner seeking legal advice, a family member looking to protect your loved ones' assets, 
+                        or an individual facing a legal dispute, our team of experienced attorneys is here to help.
+                    </p>
+                    <a href="#contact" class="btn-primary">Free Consultation <i class="fas fa-arrow-right"></i></a>
+                    
+                    <div class="stats">
+                        <div class="stat">
+                            <span class="stat-number">30+</span>
+                            <span class="stat-text">Years of Combined Experience</span>
                         </div>
-                        <p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 1.5em;"><strong>We Are Located At</strong></p>
-                        <p style="font-family: 'Poppins';">KCB Building, 2nd Floor<br>Kenyatta Highway, Embu</p>
-                        <p class="phone" style="font-family: 'Poppins';">Telephone<br>0704-445-890</p>
+                        <div class="stat">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-text">Clients Served</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">Millions</span>
+                            <span class="stat-text">Saved for Our Clients</span>
+                        </div>
                     </div>
                 </div>
             </div>
-    
+            <a href="#about" class="scroll-down">
+                <span class="scroll-text">Scroll</span>
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </section>
+
+        <!-- About Section -->
+        <section class="about" id="about">
+            <div class="container">
+                <div class="image-column">
+                    <div class="image-container">
+                        <img src="assets/images/firm.jpg" alt="Rugaita & Co Advocates Office">
+                        <div class="image-tag">RUGAITA & CO ADVOCATES - EMBU</div>
+                    </div>
+                </div>
+                <div class="text-column">
+                    <h5 class="subtitle">About Us</h5>
+                    <h2 class="title">RUGAITA & CO ADVOCATES</h2>
+                    <div class="accent-line"></div>
+                    <p class="description">
+                        A Full-Service Kenyan Law Firm with experienced attorneys who can handle a broad range of
+                        complex legal issues for businesses, governmental entities, organizations, professionals,
+                        and individuals, at the local, regional, and national levels.
+                    </p>
+                    <p class="description">
+                        Through more than 25 years of practicing law, the firm has developed the deep knowledge base and sound judgment that
+                        delivers value to our clients. Rugaita & Co Advocates attracts exceptional attorneys who are
+                        diligent, determined, and care about the success of its clients.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services" id="services">
+            <div class="container">
+                <div class="section-header">
+                    <h5 class="subtitle">Our Expertise</h5>
+                    <h2 class="title">Legal Services We Provide</h2>
+                    <p class="description">Explore our expert legal services designed to meet your unique needs.</p>
+                </div>
+                
+                <div class="services-tabs">
+                    <div class="tabs-nav">
+                        <button class="tab-btn active" data-tab="estate">Estate & Probate Law</button>
+                        <button class="tab-btn" data-tab="civil">Civil Litigation</button>
+                        <button class="tab-btn" data-tab="business">Business Law</button>
+                        <button class="tab-btn" data-tab="real-estate">Real Estate Law</button>
+                    </div>
+                    
+                    <div class="tabs-content">
+                        <!-- Estate & Probate Tab -->
+                        <div class="tab-content active" id="estate">
+                            <div class="content-grid">
+                                <div class="content-image">
+                                    <img src="https://images.unsplash.com/photo-1575505586569-646b2ca898fc" alt="Estate and Probate Law">
+                                </div>
+                                <div class="content-text">
+                                    <h3>Estate & Probate Law</h3>
+                                    <p>
+                                        At Rugaita Co & Advocates, we understand that your legacy is important to you. 
+                                        That's why we offer comprehensive estate and probate law services to ensure that 
+                                        your assets and loved ones are protected.
+                                    </p>
+                                    <p>
+                                        Our experienced attorneys will guide you through every step of the estate planning process, 
+                                        from drafting wills and trusts to establishing powers of attorney and healthcare directives.
+                                    </p>
+                                    <ul class="service-list">
+                                        <li><a href="#">Estate Planning</a></li>
+                                        <li><a href="#">Probate & Estate Administration</a></li>
+                                        <li><a href="#">Trust Administration</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Civil Litigation Tab -->
+                        <div class="tab-content" id="civil">
+                            <div class="content-grid">
+                                <div class="content-image">
+                                    <img src="assets/images/service2.png" alt="Civil Litigation">
+                                </div>
+                                <div class="content-text">
+                                    <h3>Civil Litigation</h3>
+                                    <p>
+                                        When legal disputes arise, it's important to have an experienced civil litigation 
+                                        team on your side. At Rugaita Co & Advocates, we are committed to protecting your 
+                                        rights and interests in a variety of civil litigation matters.
+                                    </p>
+                                    <ul class="service-list">
+                                        <li><a href="#">Bad Faith</a></li>
+                                        <li><a href="#">Professional Negligence</a></li>
+                                        <li><a href="#">Liquor Liability</a></li>
+                                        <li><a href="#">Product Liability</a></li>
+                                        <li><a href="#">Insurance Defense</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Business Law Tab -->
+                        <div class="tab-content" id="business">
+                            <div class="content-grid">
+                                <div class="content-image">
+                                    <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf" alt="Business Law">
+                                </div>
+                                <div class="content-text">
+                                    <h3>Business Law</h3>
+                                    <p>
+                                        Our team provides strategic business law services to help your company succeed. 
+                                        We handle entity formation, contract negotiations, mergers, acquisitions, and much more.
+                                    </p>
+                                    <ul class="service-list">
+                                        <li><a href="#">Entity Formation</a></li>
+                                        <li><a href="#">Contract Negotiations</a></li>
+                                        <li><a href="#">Mergers & Acquisitions</a></li>
+                                        <li><a href="#">Business Litigation</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Real Estate Law Tab -->
+                        <div class="tab-content" id="real-estate">
+                            <div class="content-grid">
+                                <div class="content-image">
+                                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa" alt="Real Estate Law">
+                                </div>
+                                <div class="content-text">
+                                    <h3>Real Estate Law</h3>
+                                    <p>
+                                        We offer comprehensive real estate law services, including property transactions, 
+                                        zoning, land use, and dispute resolution. Let our team assist with your real estate needs.
+                                    </p>
+                                    <ul class="service-list">
+                                        <li><a href="#">Property Transactions</a></li>
+                                        <li><a href="#">Zoning & Land Use</a></li>
+                                        <li><a href="#">Real Estate Disputes</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="team" id="team">
+            <div class="container">
+                <div class="section-header">
+                    <h5 class="subtitle">Expertise In Action</h5>
+                    <h2 class="title">Meet The Team</h2>
+                    <p class="description">
+                        At Rugaita & Co Advocates, our skilled attorneys are dedicated to delivering exceptional legal services, 
+                        utilizing the latest technology to offer efficient and cost-effective solutions tailored to your unique needs.
+                    </p>
+                </div>
+                
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2" alt="Wairimu Rugaita">
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">Wairimu Rugaita</h3>
+                            <p class="member-role">Managing Partner</p>
+                            <div class="member-social">
+                                <a href="https://www.bing.com/ck/a?!&&p=6ec6b46aa4fefd50094a5ecff75b6835946f5a57b384c310d40db4c3edf13dddJmltdHM9MTc0MTEzMjgwMA&ptn=3&ver=2&hsh=4&fclid=05f0da45-5425-66bf-1b1f-cedf553d6738&psq=Wairimu+Rugaita&u=a1aHR0cHM6Ly9rZS5saW5rZWRpbi5jb20vaW4vd2FpcmltdS1ydWdhaXRhLTkzMmI1MzI3&ntb=1" target="_blank" rel="noopener norefferer"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="assets/images/R (1).jpg" alt="David Kariuki">
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">David Kariuki</h3>
+                            <p class="member-role">Senior Associate</p>
+                            <div class="member-social">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="assets/images/images (1).jpg" alt="David Kariuki">
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">Grace Wambui</h3>
+                            <p class="member-role">Lead Counsel</p>
+                            <div class="member-social">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="map-column">
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.678998014507!2d37.45222!3d-0.537393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x18262de2025c2a8d%3A0xce050e3f04890c66!2sRugaita%20%26%20Co%20Advocates!5e0!3m2!1sen!2sus!4v1700000000000" allowfullscreen loading="lazy"></iframe>
+                        </div>
+                    </div>
+                    
+                    <div class="info-column">
+                        <div class="contact-card">
+                            <div class="card-header">
+                                <div class="accent-line"></div>
+                                <h2 class="title">We Look Forward to Working With You</h2>
+                            </div>
+                            
+                            <div class="contact-info">
+                                <h3>Our Location</h3>
+                                <p>KCB Building, 2nd Floor<br>Kenyatta Highway, Embu</p>
+                                
+                                <h3>Contact Us</h3>
+                                <p class="phone">+254 704 445 890</p>
+                                <p class="email">info@rugaitaadvocates.co.ke</p>
+                                
+                                <div class="contact-social">
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
+
     <footer class="footer">
-        <div class="footer-container">
-            <!-- Left Section: Copyright -->
-            <div class="footer-left">
-                <p class="footer-text">© 2025 Rugaita & Co Advocates. All rights reserved.</p>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-copyright">
+                    <p>© <span id="current-year">2025</span> Rugaita & Co Advocates.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="#">Legal Disclaimer</a>
+                    <span class="divider">|</span>
+                    <a href="#">Privacy Policy</a>
+                </div>
+                
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
             </div>
-    
-            <!-- Middle Section: Legal Links -->
-            <div class="footer-middle">
-                <a href="#" class="footer-link">Legal Disclaimer</a>
-                <span class="footer-divider">|</span>
-                <a href="#" class="footer-link">Privacy Policy</a>
+            
+            <div class="footer-bottom">
+                <p>Designed and Developed by <a href="https://github.com/pravinireri" target="_blank">Pravin Ireri</a></p>
             </div>
-    
-            <!-- Right Section: Social Media -->
-            <div class="footer-right">
-                <a href="https://web.facebook.com/" target="_blank" rel="noopener noreferrer" class="social-link">
-                    <i class="fa-brands fa-facebook"></i>
-                </a>
-                <a href="https://x.com/" target="_blank" rel="noopener noreferrer" class="social-link">
-                    <i class="fa-brands fa-twitter"></i>
-                </a>
-                <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="social-link">
-                    <i class="fa-brands fa-linkedin"></i>
-                </a>
-            </div>
-        </div>
-    
-        <div class="footer-divider-animated"></div>
-            <div class="footer-credits">
-            <p class="credits-text">Designed and Developed by <a href="https://github.com/pravinireri" target="_blank" rel="noopener noreferrer" class="credits-link">Pravin Ireri</a></p>
         </div>
     </footer>
-    <button id="backToTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
-    <script src="./assets/js/index.js"></script>
+
+    <button id="backToTop" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+    
+    <script src="assets/js/index.js"></script>
 </body>
 </html>
